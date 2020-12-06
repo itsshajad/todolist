@@ -1,10 +1,25 @@
 <!DOCTYPE html>
+
 <head>
     <title>Javascript Todo App</title>
-    <link rel="stylesheets" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
+
 <body>
-  <h1>start todo app</h1>  
+    <section>
+        <header>
+            <h1>Todo App</h1>
+        </header>
+        <form>
+            <input type="text" value="something here" class="todo-input" required>
+            <button class="todo-button" type="submit">+</button>
+        </form>
+        <div class="todo-container">
+            <ul class="todo-list">
+            </ul>
+        </div>
+    </section>
 </body>
 <script src="./app.js"></script>
+
 </html>
