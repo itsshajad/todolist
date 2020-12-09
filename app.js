@@ -2,11 +2,12 @@
 const todoInput = document.querySelector('.todo-input');
 const todoBtn = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const filterTodo = document.querySelector('.filter-todo');
 
 // eventListiners
 todoBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteList);
-
+filterTodo.addEventListener('click', todoFilteration);
 // function
 function addTodo(e) {
   e.preventDefault();
@@ -34,21 +35,31 @@ function addTodo(e) {
   const deleteBtn = document.createElement('button');
   deleteBtn.innerHTML = '<p>&#10006;</p>';
   deleteBtn.classList.add('delete-btn');
-  {
-  }
+
   todoDiv.appendChild(deleteBtn);
-  todoList.appendChild(todoDiv);
+
+  if (todoValue !== '') {
+    todoList.appendChild(todoDiv);
+  } else {
+    alert('Please enter field');
+  }
 
   todoInput.value = '';
-
-  console.log(checkBtn);
-  console.log(deleteBtn);
 }
 
 function deleteList(e) {
-  console.log(e.target);
   const item = e.target;
   if (item.classList[0] === 'delete-btn') {
-    item.parentElement.remove();
+    const todoItem = item.parentElement;
+    todoItem.classList.add('add-animation');
+
+    todoItem.firstChild.innerHTML = 'good bye';
+
+    todoItem.addEventListener('transitionend', function (e) {
+      todoItem.remove();
+    });
   }
+}
+function todoFilteration() {
+  console.log(todoList.childNodes);
 }
