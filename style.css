@@ -6,23 +6,28 @@
   transition: 0.3s;
 }
 body {
+  width: 100%;
   background: #303f9f;
   min-height: 100vh;
   color: #fff;
   font-family: sans-serif;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
+section {
+  width: 100%;
+  max-width: 375px;
+}
 
 form,
 header {
-  /* width: 100%; */
-  /* max-width: 475px; */
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
 }
 header {
@@ -38,6 +43,7 @@ form select {
   border: none;
   font-size: 1.5rem;
 }
+
 button {
   background-color: #ffdf7d;
   min-width: 45px;
@@ -103,4 +109,12 @@ select {
   pointer-events: none;
   outline: none;
   border: none;
+}
+@media (min-width: 768px) {
+  form {
+    background-color: #fff;
+  }
+  section {
+    max-width: 578px;
+  }
 }
