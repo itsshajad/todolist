@@ -14,11 +14,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 form,
 header {
-  max-width: 475px;
+  /* width: 100%; */
+  /* max-width: 475px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,10 +69,13 @@ select {
   background-color: cornflowerblue;
   position: absolute;
   top: 0;
-  right: -45px;
+  right: -28px;
 }
 .todo {
   display: flex;
+}
+.saveTodo {
+  opacity: 0.5;
 }
 .todo li {
   list-style: none;
@@ -88,10 +93,11 @@ select {
   background-color: #66bb6a;
 }
 .add-animation {
-  transform: translate(350px);
   opacity: 0;
   transition: 0.3 ease;
+  transform: translate(350px);
 }
+
 .delete-btn p,
 .check-btn p {
   pointer-events: none;
