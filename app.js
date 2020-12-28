@@ -60,12 +60,12 @@ function deleteList(e) {
   if (item.classList[0] === 'delete-btn') {
     todoItem.classList.add('add-animation');
 
+    removeLocalTodos(todoItem);
     todoItem.firstChild.innerHTML = 'good bye';
 
     todoItem.addEventListener('transitionend', function (e) {
       todoItem.remove();
     });
-    removeLocalTodos(todo);
   }
 
   // save todo
@@ -154,8 +154,7 @@ function getTodos() {
   });
 }
 
-function removeLocalTodos(e) {
-  console.log(e);
+function removeLocalTodos(todo) {
   let todos;
 
   if (localStorage.getItem('todos') === null) {
@@ -163,4 +162,7 @@ function removeLocalTodos(e) {
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
+  const todoIndex = todo.children[0].innerText;
+  todos.splice(todos.indexOf(todoIndex), 1);
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
