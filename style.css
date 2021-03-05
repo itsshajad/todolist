@@ -7,19 +7,19 @@
 }
 body {
   width: 100%;
-  background: #303f9f;
+  background: #000000;
   min-height: 100vh;
   color: #fff;
   font-family: sans-serif;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 section {
   width: 100%;
+  margin-top:75px;
   max-width: 375px;
 }
 
@@ -79,6 +79,7 @@ select {
 }
 .todo {
   display: flex;
+  margin-top: 15px;
 }
 .saveTodo {
   opacity: 0.5;
@@ -111,9 +112,7 @@ select {
   border: none;
 }
 @media (min-width: 768px) {
-  form {
-    background-color: #fff;
-  }
+
   section {
     max-width: 578px;
   }
