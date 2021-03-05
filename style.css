@@ -65,18 +65,7 @@ select {
   margin-left: 10px;
   position: relative;
 }
-.select::after {
-  content: '\25BC';
-  height: 100%;
-  min-width: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: cornflowerblue;
-  position: absolute;
-  top: 0;
-  right: -28px;
-}
+
 .todo {
   display: flex;
   margin-top: 15px;
